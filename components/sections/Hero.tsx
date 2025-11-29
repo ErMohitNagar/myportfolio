@@ -11,9 +11,10 @@ export default function Hero() {
     const [reducedMotion, setReducedMotion] = useState(false);
 
     useEffect(() => {
-        setIsVisible(true);
+        const timer = setTimeout(() => setIsVisible(true), 100);
         const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-        setReducedMotion(mediaQuery.matches);
+        setTimeout(() => setReducedMotion(mediaQuery.matches), 0);
+        return () => clearTimeout(timer);
     }, []);
 
     const scrollToSection = (id: string) => {
@@ -43,9 +44,8 @@ export default function Hero() {
                 <div className="max-w-4xl mx-auto text-center">
                     {/* Greeting Badge */}
                     <div
-                        className={`inline-flex items-center gap-2 px-4 py-2 bg-brand-indigo/10 border border-brand-indigo/30 rounded-full mb-6 transition-all duration-700 delay-200 ${
-                            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                        }`}
+                        className={`inline-flex items-center gap-2 px-4 py-2 bg-brand-indigo/10 border border-brand-indigo/30 rounded-full mb-6 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                            }`}
                     >
                         <Sparkles className="w-4 h-4 text-brand-teal-light" />
                         <span className="text-brand-teal-light text-sm font-medium">Available for new projects</span>
@@ -53,30 +53,27 @@ export default function Hero() {
 
                     {/* Name */}
                     <h1
-                        className={`text-6xl lg:text-8xl font-bold mb-6 transition-all duration-700 delay-300 ${
-                            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                        }`}
+                        className={`text-6xl lg:text-8xl font-bold mb-6 transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                            }`}
                     >
-                        <span className="block text-slate-300 text-lg lg:text-xl font-normal mb-2">Hi, I'm</span>
+                        <span className="block text-slate-300 text-lg lg:text-xl font-normal mb-2">Hi, I&apos;m</span>
                         <span className="bg-gradient-to-r from-brand-indigo-light via-brand-purple to-brand-teal-light bg-clip-text text-transparent">
-              Mohit Nagar
-            </span>
+                            Mohit Nagar
+                        </span>
                     </h1>
 
                     {/* Title */}
                     <h2
-                        className={`text-3xl lg:text-5xl font-bold text-slate-200 mb-8 transition-all duration-700 delay-400 ${
-                            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                        }`}
+                        className={`text-3xl lg:text-5xl font-bold text-slate-200 mb-8 transition-all duration-700 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                            }`}
                     >
                         Fullstack Developer
                     </h2>
 
                     {/* Description */}
                     <p
-                        className={`text-slate-400 text-lg lg:text-xl max-w-2xl mx-auto mb-12 leading-relaxed transition-all duration-700 delay-500 ${
-                            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                        }`}
+                        className={`text-slate-400 text-lg lg:text-xl max-w-2xl mx-auto mb-12 leading-relaxed transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                            }`}
                     >
                         I craft beautiful, scalable web applications with modern technologies. Specialized in building
                         end-to-end solutions that solve real-world problems.
@@ -84,9 +81,8 @@ export default function Hero() {
 
                     {/* CTA Buttons */}
                     <div
-                        className={`flex flex-col sm:flex-row gap-4 justify-center mb-16 transition-all duration-700 delay-600 ${
-                            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                        }`}
+                        className={`flex flex-col sm:flex-row gap-4 justify-center mb-16 transition-all duration-700 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                            }`}
                     >
                         <button
                             onClick={() => scrollToSection('projects')}
@@ -105,9 +101,8 @@ export default function Hero() {
 
                     {/* Tech Stack Pills */}
                     <div
-                        className={`flex flex-wrap gap-3 justify-center transition-all duration-700 delay-700 ${
-                            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                        }`}
+                        className={`flex flex-wrap gap-3 justify-center transition-all duration-700 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                            }`}
                     >
                         {techStack.map((tech, index) => (
                             <span
@@ -115,8 +110,8 @@ export default function Hero() {
                                 style={{ animationDelay: `${700 + index * 50}ms` }}
                                 className="px-4 py-2 bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-full text-sm text-slate-300 hover:border-brand-indigo hover:text-brand-indigo-light transition-all cursor-default animate-fade-in"
                             >
-                {tech}
-              </span>
+                                {tech}
+                            </span>
                         ))}
                     </div>
                 </div>
@@ -125,9 +120,8 @@ export default function Hero() {
             {/* Scroll Indicator */}
             <button
                 onClick={() => scrollToSection('projects')}
-                className={`absolute bottom-8 left-1/2 -translate-x-1/2 z-10 transition-all duration-700 delay-800 hover:scale-110 ${
-                    isVisible ? 'opacity-100' : 'opacity-0'
-                }`}
+                className={`absolute bottom-8 left-1/2 -translate-x-1/2 z-10 transition-all duration-700 delay-800 hover:scale-110 ${isVisible ? 'opacity-100' : 'opacity-0'
+                    }`}
                 aria-label="Scroll to projects"
             >
                 <div className="flex flex-col items-center gap-2 animate-bounce">

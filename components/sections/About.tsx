@@ -80,15 +80,15 @@ export default function About() {
                 <div className="mb-20 max-w-3xl mx-auto">
                     <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-2xl p-8 lg:p-12">
                         <p className="text-slate-300 text-lg leading-relaxed mb-6">
-                            Hey there! I'm a fullstack developer who loves turning complex problems into elegant, user-friendly solutions.
+                            Hey there! I&apos;m a fullstack developer who loves turning complex problems into elegant, user-friendly solutions.
                             My journey in tech started with curiosity and has evolved into a passion for creating impactful digital experiences.
                         </p>
                         <p className="text-slate-300 text-lg leading-relaxed mb-6">
-                            I specialize in building modern web applications using React, Next.js, and Node.js. Whether it's crafting
+                            I specialize in building modern web applications using React, Next.js, and Node.js. Whether it&apos;s crafting
                             pixel-perfect interfaces or architecting scalable backend systems, I thrive on the entire development lifecycle.
                         </p>
                         <p className="text-slate-300 text-lg leading-relaxed">
-                            When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects,
+                            When I&apos;m not coding, you&apos;ll find me exploring new technologies, contributing to open-source projects,
                             or sharing knowledge with the developer community through blog posts and tutorials.
                         </p>
                     </div>
@@ -118,8 +118,8 @@ export default function About() {
                                                 key={skill}
                                                 className="px-3 py-1 bg-slate-800/80 border border-slate-700 rounded-full text-sm text-slate-300 hover:border-brand-indigo hover:text-brand-indigo-light transition-all"
                                             >
-                        {skill}
-                      </span>
+                                                {skill}
+                                            </span>
                                         ))}
                                     </div>
                                 </div>
@@ -141,9 +141,8 @@ export default function About() {
                                 <div
                                     key={index}
                                     style={{ animationDelay: `${index * 150}ms` }}
-                                    className={`relative mb-12 animate-fade-in ${
-                                        index % 2 === 0 ? 'md:pr-1/2 md:text-right' : 'md:pl-1/2 md:ml-auto'
-                                    }`}
+                                    className={`relative mb-12 animate-fade-in ${index % 2 === 0 ? 'md:pr-1/2 md:text-right' : 'md:pl-1/2 md:ml-auto'
+                                        }`}
                                 >
                                     {/* Timeline Dot */}
                                     <div className="absolute left-0 md:left-1/2 top-6 w-4 h-4 bg-brand-indigo rounded-full -translate-x-1.5 md:-translate-x-2 border-4 border-slate-950 z-10" />
@@ -151,9 +150,9 @@ export default function About() {
                                     {/* Content Card */}
                                     <div className={`ml-8 md:ml-0 ${index % 2 === 0 ? 'md:mr-12' : 'md:ml-12'}`}>
                                         <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-xl p-6 hover:border-brand-indigo/50 transition-all">
-                      <span className="inline-block px-3 py-1 bg-brand-indigo/20 border border-brand-indigo/50 rounded-full text-xs font-medium text-brand-indigo-light mb-3">
-                        {item.year}
-                      </span>
+                                            <span className="inline-block px-3 py-1 bg-brand-indigo/20 border border-brand-indigo/50 rounded-full text-xs font-medium text-brand-indigo-light mb-3">
+                                                {item.year}
+                                            </span>
                                             <h4 className="text-xl font-bold text-slate-100 mb-1">{item.title}</h4>
                                             <p className="text-brand-teal-light font-medium mb-3">{item.company}</p>
                                             <p className="text-slate-400 text-sm">{item.description}</p>

@@ -15,10 +15,10 @@ interface AnimatedBackgroundProps {
  * Wraps ParticleField in a Canvas with positioning
  */
 export default function AnimatedBackground({
-                                               particleCount = 1000,
-                                               opacity = 0.4,
-                                               className = ''
-                                           }: AnimatedBackgroundProps) {
+    particleCount = 1000,
+    opacity = 0.4,
+    className = ''
+}: AnimatedBackgroundProps) {
     return (
         <div
             className={`absolute inset-0 ${className}`}

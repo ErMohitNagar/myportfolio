@@ -70,8 +70,8 @@ export default function Contact() {
                         Get In <span className="bg-gradient-to-r from-brand-indigo-light to-brand-teal-light bg-clip-text text-transparent">Touch</span>
                     </h2>
                     <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-                        Have a project in mind or want to collaborate? I'd love to hear from you.
-                        Drop me a message and I'll get back to you as soon as possible.
+                        Have a project in mind or want to collaborate? I&apos;d love to hear from you.
+                        Drop me a message and I&apos;ll get back to you as soon as possible.
                     </p>
                 </div>
 
@@ -170,7 +170,7 @@ export default function Contact() {
                             {status === 'success' && (
                                 <div className="flex items-center gap-2 p-4 bg-green-500/10 border border-green-500/50 rounded-lg text-green-400 animate-fade-in">
                                     <CheckCircle className="w-5 h-5 flex-shrink-0" />
-                                    <span className="text-sm">Message sent successfully! I'll get back to you soon.</span>
+                                    <span className="text-sm">Message sent successfully! I&apos;ll get back to you soon.</span>
                                 </div>
                             )}
 
@@ -187,9 +187,9 @@ export default function Contact() {
                     <div className="flex flex-col justify-between">
                         {/* Info Card */}
                         <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-2xl p-8 mb-8">
-                            <h3 className="text-2xl font-bold text-slate-100 mb-4">Let's work together!</h3>
+                            <h3 className="text-2xl font-bold text-slate-100 mb-4">Let&apos;s work together!</h3>
                             <p className="text-slate-400 mb-6 leading-relaxed">
-                                I'm currently available for freelance projects and full-time opportunities.
+                                I&apos;m currently available for freelance projects and full-time opportunities.
                                 Whether you have a question or just want to say hi, feel free to reach out!
                             </p>
 
